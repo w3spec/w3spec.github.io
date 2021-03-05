@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* Main-Wrapper */
+nav {
+  position: fixed;
+  width: 150px;
+  left: -150px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
+  transition: left 1s ease-in 0.5s;
+}
+nav:after {
+  content: "📱";
+  font-family: "FontAwesome";
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  color: #ffffff;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+nav:hover {
+  left: 0;
+  transition: left 1s ease-in 0s;
+}
+nav:hover:after {
+  content: "🌬️";
+}
+
+/* Main-Wrapper - End */
+/* Global Styles */
+nav {
+  /* First-Level Navigation */
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  padding: 10px 5px;
+  padding-left: 30px;
+}
+nav ul li:hover {
+  background-color: #0096ff;
+}
+nav ul li:hover > ul {
+  top: 0%;
+}
+nav ul li > ul {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  top: 1999px;
+  left: 100%;
+  transition: top 0.5s;
+}
+nav ul li > ul li {
+  min-width: 120px;
+}
+nav ul li > ul:hover {
+  top: 0%;
+}
+nav ul a {
+  color: #ffffff;
+  text-decoration: none;
+  padding-left: 25px;
+  display: block;
+}
+nav ul a:after {
+  content: "🌞";
+  font-family: "FontAwesome";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  font-size: 12px;
+}
+nav > ul {
+  margin-top: 32px;
+}
+
+/* Global Styles - End */
+/* Sidebar */
+/* Multi-Level Navigation */
+/* Alternative Style */
+/* Looks cool, but a bit unhandy. Just de-coment the next-lines */
+/*
+   nav {
+
+  ul {
+
+    li {
+
+      background-color: rgba( 0, 0, 0, .4 );
+
+      & > ul {
+
+        position: unset;
+        background-color: transparent;
+        margin-left: 10px;
+        max-height: 0;
+        transition: max-height .5s;
+        overflow: hidden;
+
+      }
+
+      &:hover {
+
+        background-color: rgba( 0, 150, 255, .4 );
+
+        & > ul {
+
+          max-height: 999px;
+          overflow: visible;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+ /**/
+/* Some CSS to prettyfy the screen */
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgb(255, 94, 0) 0%, rgb(255, 0, 34) 100%);
+  background-repeat: no-repeat;
+}
+body:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.8;
+  background-image: ;
+}
+body a {
+  color: #0078cc;
+  text-decoration: none;
+}
+body #main-wrapper {
+  padding: 40px 0;
+}
+body .contrast-bg {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+body .contrast-bg:first-child {
+  margin-bottom: 60px;
+}
+body .contrast-bg:last-child {
+  margin-top: 60px;
+}
+body .contrast-bg p {
+  margin-top: 0;
+}
+body .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+body .container .left {
+  text-align: left;
+  width: 25%;
+  margin: 0 15px;
+}
+body .container .right {
+  text-align: left;
+  width: 75%;
+  margin: 0 15px;
+}
+
+@media (max-width: 767px) {
+  body .container {
+    display: block;
+  }
+
+  body .container .left,
+body .container .right {
+    margin: 15px;
+    width: calc( 100% - 60px );
+  }
+}
